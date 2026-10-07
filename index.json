@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "stories": [
+    {
+      "storyId": "mist-harbor-observatory",
+      "version": 1,
+      "title": "雾港观测站",
+      "author": "AiChat 示例作者",
+      "summary": "一座建在潮汐城市边缘的旧观测站，记录着角色与用户共同生活的世界规则。",
+      "tags": ["现代幻想", "世界观", "示例"],
+      "file": "stories/mist-harbor-observatory/1.json"
+    }
+  ]
+}

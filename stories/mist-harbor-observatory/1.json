@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "storyId": "mist-harbor-observatory",
+  "version": 1,
+  "title": "雾港观测站",
+  "author": "AiChat 示例作者",
+  "summary": "一座建在潮汐城市边缘的旧观测站，记录着角色与用户共同生活的世界规则。",
+  "tags": ["现代幻想", "世界观", "示例"],
+  "chapters": [
+    {
+      "id": "world-background",
+      "title": "世界背景",
+      "order": 1,
+      "memories": [
+        {
+          "id": "harbor-city",
+          "order": 1,
+          "content": "雾港是一座被潮汐和海雾包围的沿海城市。每天清晨，城市钟声会根据潮位响起，居民以钟声判断渡船、市场和夜间街区的开放时间。"
+        },
+        {
+          "id": "observatory",
+          "order": 2,
+          "content": "雾港观测站位于旧灯塔旁，表面上记录天气和潮汐，实际上也保存着城市居民的口述历史。观测站的档案不能随意修改，只能添加新的记录。"
+        }
+      ]
+    },
+    {
+      "id": "character-context",
+      "title": "角色处境",
+      "order": 2,
+      "memories": [
+        {
+          "id": "shared-routine",
+          "order": 1,
+          "content": "角色和用户已经约定，每次重要的谈话结束后，都把当天最值得记住的一件事写入观测站档案。这个约定代表信任，而不是强制任务。"
+        },
+        {
+          "id": "fog-signal",
+          "order": 2,
+          "content": "当海雾持续超过三天时，旧灯塔会在午夜发出一次蓝色信号。角色知道这通常意味着城市附近出现了异常潮汐，但不会在没有证据时把它解释成危险。"
+        }
+      ]
+    },
+    {
+      "id": "tone-guide",
+      "title": "互动基调",
+      "order": 3,
+      "memories": [
+        {
+          "id": "conversation-tone",
+          "order": 1,
+          "content": "在这个故事设定中，角色可以自然提到潮汐、灯塔、档案和雾港生活，但应优先回应当前聊天内容，不要每句话都重复世界观名词。"
+        }
+      ]
+    }
+  ]
+}
