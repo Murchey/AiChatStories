@@ -36,6 +36,53 @@ App 会读取公开 Raw 文件，不需要填写 GitHub Token 或 Gitee Token。
 
 不要把 COS SecretId、SecretKey、AccessKey 或 SecretKey 写入 App 配置。推荐使用公共只读目录。
 
+COS / OSS 故事目录只需要读取对象，不需要开放对象列表权限：
+
+```text
+{BASE_URL}/
+├── index.json
+└── stories/
+    └── <story-id>/
+        └── <version>.json
+```
+
+#### 腾讯云 COS 设置
+
+1. 创建 Bucket，建议访问权限选择“公有读、私有写”。
+2. 上传 `index.json` 和 `stories/` 目录。
+3. 记录访问域名，例如：
+
+```text
+https://<bucket>-<appid>.cos.<region>.myqcloud.com
+```
+
+4. 在 AiChat 的“发现 → 故事线社区 → COS / OSS”中填写访问域名，索引路径填写 `index.json`；也可以直接填写完整索引地址。
+
+如果 Bucket 必须保持私有，请为 `index.json` 和故事文件生成有效的预签名 URL，并直接填写完整索引地址。不要将 SecretId、SecretKey 或 AccessKey 写入仓库或 App 配置。
+
+#### 阿里云 OSS 设置
+
+1. 创建 Bucket，建议 ACL 使用“公共读”。
+2. 上传相同的 `index.json` 和 `stories/` 目录。
+3. 记录访问域名，例如：
+
+```text
+https://<bucket>.oss-cn-hangzhou.aliyuncs.com
+```
+
+4. 在 AiChat 中填写公共地址和 `index.json`，或填写完整索引 URL。
+
+如果使用路径前缀，例如 `/aichat`，对象应位于 `aichat/index.json` 和 `aichat/stories/...`，并在 App 中填写对应前缀或完整索引 URL。
+
+#### COS / OSS 自检
+
+```bash
+curl -i "https://你的域名/index.json"
+curl -I "https://你的域名/stories/<story-id>/<version>.json"
+```
+
+两个请求都应返回 `200`。AiChat 使用原生 HTTP 请求，通常不需要配置 CORS。对象存储中只放可公开分享的故事内容，不要上传 API Key、用户数据或备份文件。
+
 ### 发布新故事
 
 1. 在 `stories/<story-id>/` 下新增版本文件，例如 `2.json`。
@@ -89,3 +136,52 @@ Do not put COS SecretId, SecretKey, AccessKey, or SecretKey values in the app co
 4. Push the repository or upload the updated files to object storage.
 
 The first version supports text, chapters, and memory points only. Images, audio, comments, likes, and ratings are not supported yet.
+
+### COS / OSS setup
+
+The static COS / OSS source only needs object reads; it does not require bucket listing permissions:
+
+```text
+{BASE_URL}/
+├── index.json
+└── stories/
+    └── <story-id>/
+        └── <version>.json
+```
+
+#### Tencent COS
+
+1. Create a bucket with **public read / private write**.
+2. Upload `index.json` and the `stories/` directory.
+3. Note the endpoint, for example:
+
+```text
+https://<bucket>-<appid>.cos.<region>.myqcloud.com
+```
+
+4. In AiChat, open **Discover → Story Community → COS / OSS**, enter the endpoint, and use `index.json` as the index path. You can also enter the complete index URL.
+
+For a private bucket, use signed URLs for `index.json` and story files. Never put SecretId, SecretKey, or AccessKey values in the repository or app configuration.
+
+#### Aliyun OSS
+
+1. Create a bucket with **public read** ACL.
+2. Upload the same `index.json` and `stories/` layout.
+3. Use an endpoint such as:
+
+```text
+https://<bucket>.oss-cn-hangzhou.aliyuncs.com
+```
+
+4. Enter the public endpoint and `index.json`, or the complete index URL, in AiChat.
+
+For a prefix such as `/aichat`, store `aichat/index.json` and `aichat/stories/...`, then enter the prefix or the complete index URL.
+
+#### Verify the bucket
+
+```bash
+curl -i "https://your-domain/index.json"
+curl -I "https://your-domain/stories/<story-id>/<version>.json"
+```
+
+Both requests should return `200`. Native app requests normally do not need CORS. Publish only shareable story content; never upload API keys, user data, or backups.
