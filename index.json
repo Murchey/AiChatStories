@@ -1,14 +1,41 @@
-{
+﻿{
   "schemaVersion": 1,
   "stories": [
     {
       "storyId": "mist-harbor-observatory",
-      "version": 1,
+      "version": 2,
       "title": "雾港观测站",
       "author": "AiChat 示例作者",
-      "summary": "一座建在潮汐城市边缘的旧观测站，记录着角色与用户共同生活的世界规则。",
-      "tags": ["现代幻想", "世界观", "示例"],
-      "file": "stories/mist-harbor-observatory/1.json"
+      "summary": "一座建在潮汐城市边缘的旧观测站，记录着角色与用户共同生活的世界规则。v2 增加了夜间档案和潮汐异常记录。",
+      "tags": ["现代幻想", "世界观", "示例", "版本测试"],
+      "file": "stories/mist-harbor-observatory/2.json"
+    },
+    {
+      "storyId": "starbridge-archive",
+      "version": 1,
+      "title": "星桥档案馆",
+      "author": "AiChat Community",
+      "summary": "星桥是一座连接不同时间片段的城市档案馆，来访者可以在旧记录里找到尚未发生的线索。",
+      "tags": ["科幻", "悬疑", "世界观"],
+      "file": "stories/starbridge-archive/1.json"
+    },
+    {
+      "storyId": "night-ferry-radio",
+      "version": 1,
+      "title": "夜航电台",
+      "author": "AiChat Community",
+      "summary": "午夜渡船上的电台只播放给还没有入睡的人，主持人会替乘客保存那些不想忘记的声音。",
+      "tags": ["治愈", "日常", "广播"],
+      "file": "stories/night-ferry-radio/1.json"
+    },
+    {
+      "storyId": "quiet-city-protocol",
+      "version": 1,
+      "title": "静默城市协议",
+      "author": "AiChat 示例作者",
+      "summary": "城市进入静默协议后，所有公共屏幕停止播报，角色和用户需要通过细小的线索恢复彼此的联络。",
+      "tags": ["近未来", "互动", "示例"],
+      "file": "stories/quiet-city-protocol/1.json"
     }
   ]
 }

@@ -13,7 +13,16 @@ stories/
     <version>.json
 ```
 
-当前示例包含一个“雾港观测站”故事设定，故事内容只有文字。安装后，用户会在 App 中选择一个本地角色，故事章节会作为独立的“故事线记忆”加入角色记忆池。更新或卸载故事时，不会删除用户手动添加的记忆。
+当前测试目录包含四个文字故事设定：雾港观测站（v2）、星桥档案馆、夜航电台和静默城市协议。它们用于验证信息流卡片、搜索、标签筛选、版本展示、故事详情和角色安装。安装后，用户会在 App 中选择一个本地角色，故事章节会作为独立的“故事线记忆”加入角色记忆池。更新或卸载故事时，不会删除用户手动添加的记忆。
+
+### 本地测试清单
+
+将仓库推送到公开 GitHub/Gitee 仓库，或把根目录作为 COS/OSS 公共只读目录，然后在 App 的“发现 → 故事线社区 → 设置”中配置来源。加载成功后应看到四张帖子卡片：
+
+- 使用“科幻”“悬疑”标签筛选“星桥档案馆”；
+- 使用“治愈”标签筛选“夜航电台”；
+- 搜索“版本测试”查看“雾港观测站”v2；
+- 打开任意卡片，检查章节预览、下载和角色安装流程。
 
 ### 在 App 中配置
 
@@ -92,96 +101,4 @@ curl -I "https://你的域名/stories/<story-id>/<version>.json"
 
 第一版故事包只支持文字、章节和记忆点，不支持图片、音频、评论、点赞或评分。
 
-## English
-
-This is a static example repository for the AiChat story community. It can be published to a public GitHub repository, Gitee repository, COS/OSS bucket, or used as the content source for a self-hosted Spring Boot story service.
-
-The repository follows this layout:
-
-```text
-index.json
-stories/
-  <story-id>/
-    <version>.json
-```
-
-The sample contains one text-only world setting called “Mist Harbor Observatory”. After downloading it, a user selects a local character in the app. The chapters are installed as an independent “story memory” source. Updating or removing the story does not remove manually created memories.
-
-### Configure it in the app
-
-#### GitHub / Gitee
-
-1. Push this repository to your own GitHub or Gitee repository.
-2. In AiChat, open “Discover → Story Community” and choose GitHub or Gitee.
-3. Enter the repository, for example `owner/repository`.
-4. Use `main` as the branch and `index.json` as the index path.
-5. Tap “Save and test source”.
-
-The app reads public Raw files. No GitHub or Gitee token is required.
-
-#### COS / OSS
-
-1. Upload `index.json` and the `stories/` directory to your bucket.
-2. Expose the files through a public read-only URL or signed URLs.
-3. Choose COS / OSS in the app.
-4. Enter the public bucket URL and `index.json`, or enter the complete URL of `index.json`.
-
-Do not put COS SecretId, SecretKey, AccessKey, or SecretKey values in the app configuration. A public read-only directory is recommended.
-
-### Publish a new story
-
-1. Add a new version file under `stories/<story-id>/`, such as `2.json`.
-2. Keep the `storyId` inside the file equal to the directory ID.
-3. Update the story `version` and `file` fields in `index.json`.
-4. Push the repository or upload the updated files to object storage.
-
-The first version supports text, chapters, and memory points only. Images, audio, comments, likes, and ratings are not supported yet.
-
-### COS / OSS setup
-
-The static COS / OSS source only needs object reads; it does not require bucket listing permissions:
-
-```text
-{BASE_URL}/
-├── index.json
-└── stories/
-    └── <story-id>/
-        └── <version>.json
-```
-
-#### Tencent COS
-
-1. Create a bucket with **public read / private write**.
-2. Upload `index.json` and the `stories/` directory.
-3. Note the endpoint, for example:
-
-```text
-https://<bucket>-<appid>.cos.<region>.myqcloud.com
-```
-
-4. In AiChat, open **Discover → Story Community → COS / OSS**, enter the endpoint, and use `index.json` as the index path. You can also enter the complete index URL.
-
-For a private bucket, use signed URLs for `index.json` and story files. Never put SecretId, SecretKey, or AccessKey values in the repository or app configuration.
-
-#### Aliyun OSS
-
-1. Create a bucket with **public read** ACL.
-2. Upload the same `index.json` and `stories/` layout.
-3. Use an endpoint such as:
-
-```text
-https://<bucket>.oss-cn-hangzhou.aliyuncs.com
-```
-
-4. Enter the public endpoint and `index.json`, or the complete index URL, in AiChat.
-
-For a prefix such as `/aichat`, store `aichat/index.json` and `aichat/stories/...`, then enter the prefix or the complete index URL.
-
-#### Verify the bucket
-
-```bash
-curl -i "https://your-domain/index.json"
-curl -I "https://your-domain/stories/<story-id>/<version>.json"
-```
-
-Both requests should return `200`. Native app requests normally do not need CORS. Publish only shareable story content; never upload API keys, user data, or backups.
+[ENGLISH VERSION::README_EN.MD](README_EN.MD)
