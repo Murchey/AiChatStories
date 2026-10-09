@@ -2,61 +2,78 @@
   "schemaVersion": 2,
   "stories": [
     {
-      "storyId": "mist-harbor-observatory",
-      "version": 2,
-      "title": "雾港观测站",
-      "author": "AiChat 示例作者",
-      "summary": "一座建在潮汐城市边缘的旧观测站，记录着角色与用户共同生活的世界规则。v2 增加了夜间档案和潮汐异常记录。",
-      "tags": [
-        "现代幻想",
-        "世界观",
-        "示例",
-        "版本测试"
-      ],
-      "file": "assets/mist-harbor-observatory/2.json",
-      "publishedAt": "2026-10-09T00:00:00Z"
-    },
-    {
-      "storyId": "starbridge-archive",
+      "storyId": "first-light-cafe",
       "version": 1,
-      "title": "星桥档案馆",
-      "author": "AiChat Community",
-      "summary": "星桥是一座连接不同时间片段的城市档案馆，来访者可以在旧记录里找到尚未发生的线索。",
+      "title": "晨光咖啡馆",
+      "author": "AiChat 情感故事组",
+      "publishedAt": "2026-10-09T00:00:00Z",
+      "summary": "关于慢热相遇与日常陪伴的温柔恋爱故事。两个人从一杯总是加错糖的咖啡开始，学会把喜欢说出口。",
       "tags": [
-        "科幻",
-        "悬疑",
-        "世界观"
-      ],
-      "file": "assets/starbridge-archive/1.json",
-      "publishedAt": "2026-10-09T00:00:00Z"
-    },
-    {
-      "storyId": "night-ferry-radio",
-      "version": 1,
-      "title": "夜航电台",
-      "author": "AiChat Community",
-      "summary": "午夜渡船上的电台只播放给还没有入睡的人，主持人会替乘客保存那些不想忘记的声音。",
-      "tags": [
-        "治愈",
+        "恋爱",
         "日常",
-        "广播"
+        "慢热",
+        "陪伴"
       ],
-      "file": "assets/night-ferry-radio/1.json",
-      "publishedAt": "2026-10-09T00:00:00Z"
+      "file": "assets/first-light-cafe/1.json"
     },
     {
-      "storyId": "quiet-city-protocol",
+      "storyId": "after-the-rain",
       "version": 1,
-      "title": "静默城市协议",
-      "author": "AiChat 示例作者",
-      "summary": "城市进入静默协议后，所有公共屏幕停止播报，角色和用户需要通过细小的线索恢复彼此的联络。",
+      "title": "雨停以前再见",
+      "author": "AiChat 情感故事组",
+      "publishedAt": "2026-10-09T00:00:00Z",
+      "summary": "一段错过多年后重新开始的恋爱。旧车站、未寄出的信，以及两个愿意重新了解彼此的人。",
       "tags": [
-        "近未来",
-        "互动",
-        "示例"
+        "重逢",
+        "遗憾",
+        "治愈"
       ],
-      "file": "assets/quiet-city-protocol/1.json",
-      "publishedAt": "2026-10-09T00:00:00Z"
+      "file": "assets/after-the-rain/1.json"
+    },
+    {
+      "storyId": "moonlit-distance",
+      "version": 1,
+      "title": "月光两端",
+      "author": "AiChat 情感故事组",
+      "publishedAt": "2026-10-09T00:00:00Z",
+      "summary": "异地恋的陪伴与等待。两座城市隔着夜色，但每一次通话都让距离变得具体而温柔。",
+      "tags": [
+        "异地恋",
+        "思念",
+        "陪伴",
+        "治愈"
+      ],
+      "file": "assets/moonlit-distance/1.json"
+    },
+    {
+      "storyId": "unspoken-summer",
+      "version": 1,
+      "title": "夏日未寄信",
+      "author": "AiChat 情感故事组",
+      "publishedAt": "2026-10-09T00:00:00Z",
+      "summary": "关于暗恋、勇气和自我成长的青春恋爱故事。喜欢一个人，也学着先成为完整的自己。",
+      "tags": [
+        "暗恋",
+        "青春",
+        "成长",
+        "校园"
+      ],
+      "file": "assets/unspoken-summer/1.json"
+    },
+    {
+      "storyId": "quiet-harbor",
+      "version": 1,
+      "title": "安静港湾",
+      "author": "AiChat 情感故事组",
+      "publishedAt": "2026-10-09T00:00:00Z",
+      "summary": "两位经历过疲惫关系的人，在彼此身边慢慢找回安全感的成熟恋爱。",
+      "tags": [
+        "成熟恋爱",
+        "安全感",
+        "疗愈",
+        "生活"
+      ],
+      "file": "assets/quiet-harbor/1.json"
     }
   ]
 }

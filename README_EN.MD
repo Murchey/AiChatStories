@@ -1,138 +1,119 @@
-# AiChat Stories English README
+# AiChat Stories
 
-This is a static example repository for the AiChat story community. It can be published to a public GitHub repository, Gitee repository, COS/OSS bucket, or used as the content source for a self-hosted Spring Boot story service.
+## Purpose
 
-The repository follows this layout:
+This repository is a static story source for the AiChat Story Community. It uses a lightweight catalog plus on-demand details: the app loads the root `index.json` for the feed and downloads a detail JSON only after a user opens a post. The sample catalog covers five romantic themes: slow-burn daily life, reunion and healing, long-distance love, youthful unrequited love, and a mature relationship.
+
+## Repository layout
 
 ```text
-index.json
+index.json                              # Root catalog loaded by the feed
 assets/
-  <story-id>/
-    <version>.json
+  first-light-cafe/1.json               # Detail JSON; version is the filename
+  after-the-rain/1.json
+  moonlit-distance/1.json
+  unspoken-summer/1.json
+  quiet-harbor/1.json
+  img/                                  # Shared image directory
+    <story-id>-cover.png
 ```
 
-The test catalog contains four text-only settings: Mist Harbor Observatory (v2), Starbridge Archive, Night Ferry Radio, and Quiet City Protocol. They are useful for checking feed cards, local search, tag filters, version labels, story details, and character installation. After downloading a package, a user selects a local character in the app. The post introduction is displayed for reading, while memory points are installed as an independent “story memory” source. Updating or removing the story does not remove manually created memories.
+Every catalog `file` is relative to `index.json`, for example `assets/first-light-cafe/1.json`. Every detail `images` entry is relative to its detail JSON. Because details are stored under `assets/<story-id>/` and images under `assets/img/`, use `../img/<file>` in a detail file.
 
-### Local test checklist
+## GitHub and Gitee deployment
 
-Publish the repository to a public GitHub/Gitee repository, or expose the root directory as a public read-only COS/OSS directory. In the app, open “Discover → Story Community → Settings” and configure the source. A successful load should show four feed cards:
+1. Keep `index.json` at the repository root and `assets/` beside it.
+2. Commit the JSON and image files and push them to your chosen branch.
+3. In AiChat, open **Discover → Story Community → Settings** and select GitHub or Gitee.
+4. Enter `owner/repository`, the branch, and `index.json` as the index path.
+5. Save and test the source.
 
-- Filter with `科幻` or `悬疑` to find “Starbridge Archive”;
-- Filter with `治愈` to find “Night Ferry Radio”;
-- Search for `版本测试` to find “Mist Harbor Observatory” v2;
-- Open any card to check chapter preview, download, and character installation.
+The app tries Raw URLs first and falls back to web Raw and the Contents API. GitHub and Gitee do not use Secret ID or Secret Key. The repository and branch must allow the app to read `index.json` and the referenced `assets/` files.
 
-### Configure it in the app
+## COS / OSS deployment
 
-#### GitHub / Gitee
+Use a dedicated object prefix such as `stories/`. The object keys should be:
 
-1. Push this repository to your own GitHub or Gitee repository.
-2. In AiChat, open “Discover → Story Community” and choose GitHub or Gitee.
-3. Enter the repository, for example `owner/repository`.
-4. Use `main` as the branch and `index.json` as the index path.
-5. Tap “Save and test source”.
+```text
+bucket/
+└── stories/
+    ├── index.json
+    └── assets/
+        ├── first-light-cafe/1.json
+        ├── after-the-rain/1.json
+        ├── moonlit-distance/1.json
+        ├── unspoken-summer/1.json
+        ├── quiet-harbor/1.json
+        └── img/<story-id>-cover.png
+```
 
-The app reads public Raw files. No GitHub or Gitee token is required.
+Configure the app as follows:
 
-#### COS / OSS
+- **Public object URL**: the HTTPS bucket endpoint, such as `https://bucket-123.cos.ap-guangzhou.myqcloud.com` or `https://bucket.oss-cn-hangzhou.aliyuncs.com`. Usually do not repeat `stories/` here.
+- **Storage path**: enter `stories/`. The app requests `{public URL}/stories/index.json` and resolves detail files from the catalog.
+- **Index path**: use `index.json` for the new layout. Older configurations containing a complete object key remain supported.
+- **Secret ID / Secret Key**: leave them empty for public read. For a private bucket, enter the provider credentials; the app signs COS/OSS GET requests locally. Secrets stay in local configuration and are sanitized in data backups.
 
-1. Upload `index.json` and the `assets/` directory to your bucket.
-2. Expose the files through a public read-only URL or signed URLs.
-3. Choose COS / OSS in the app.
-4. Enter the public bucket URL and `index.json`, or enter the complete URL of `index.json`.
+You may also enter the complete index URL, for example `https://example.com/stories/index.json`. In that case the URL determines the prefix. The settings page can copy the endpoint and credentials from a saved character-package object-storage configuration.
 
-Do not put COS SecretId, SecretKey, AccessKey, or SecretKey values in the app configuration. A public read-only directory is recommended.
+The source only needs reads for concrete objects; bucket listing permission is unnecessary. A private bucket should grant `GetObject` for:
 
-### Story file format
+```text
+stories/index.json
+stories/assets/**/*.json
+stories/assets/img/*
+```
 
-`index.json` contains only feed metadata. The detail JSON is fetched after the user opens a card:
+Tencent COS endpoints look like `https://<bucket>-<appid>.cos.<region>.myqcloud.com`; Aliyun OSS endpoints look like `https://<bucket>.oss-cn-hangzhou.aliyuncs.com`. If the endpoint already contains a prefix such as `/aichat`, make sure the final URL does not duplicate that prefix.
+
+## JSON formats
+
+The catalog contains feed metadata only:
 
 ```json
 {
   "schemaVersion": 2,
   "stories": [{
-    "storyId": "mist-harbor-observatory",
-    "version": 2,
-    "title": "Mist Harbor Observatory",
-    "author": "AiChat Example",
+    "storyId": "first-light-cafe",
+    "version": 1,
+    "title": "First Light Cafe",
+    "author": "AiChat Romance Group",
     "publishedAt": "2026-10-09T00:00:00Z",
     "summary": "Short summary",
-    "tags": ["fantasy"],
-    "file": "assets/mist-harbor-observatory/2.json"
+    "tags": ["romance", "daily life"],
+    "file": "assets/first-light-cafe/1.json"
   }]
 }
 ```
 
-A detail file uses `introduction` for the post body, `memories` for installable character memories, and optional `images` paths relative to the detail file:
+A detail file requires `storyId`, `title`, and `introduction`. `memories` is a string array imported once into the character selected by the user. `images` is optional. The introduction is rendered as the post body and is never automatically added to character memory. A failed image request does not hide the text.
 
 ```json
 {
   "schemaVersion": 2,
-  "storyId": "mist-harbor-observatory",
-  "version": 2,
-  "title": "Mist Harbor Observatory",
-  "introduction": "Post body.",
-  "memories": ["A setting fact"],
-  "images": ["../img/cover.png"]
+  "storyId": "first-light-cafe",
+  "version": 1,
+  "title": "First Light Cafe",
+  "author": "AiChat Romance Group",
+  "introduction": "The post body can contain multiple paragraphs.",
+  "memories": ["A relationship setting", "A fact that should remain true"],
+  "images": ["../img/first-light-cafe-cover.png"]
 }
 ```
 
-### Publish a new story
+## Publishing and verification
 
 1. Add a version file under `assets/<story-id>/`, such as `2.json`.
-2. Fill in `storyId`, `title`, and `introduction`; add `memories` and `images` as needed.
-3. Keep image paths relative to the detail file and upload the image files.
-4. Update the version, summary, tags, and `file` fields in `index.json`.
-5. Push the repository or upload the updated files to object storage.
-
-### COS / OSS setup
-
-The static COS / OSS source only needs object reads; it does not require bucket listing permissions:
-
-```text
-{BASE_URL}/
-├── index.json
-└── assets/
-    └── <story-id>/
-        └── <version>.json
-```
-
-#### Tencent COS
-
-1. Create a bucket with **public read / private write**.
-2. Upload `index.json` and the `assets/` directory.
-3. Note the endpoint, for example:
-
-```text
-https://<bucket>-<appid>.cos.<region>.myqcloud.com
-```
-
-4. In AiChat, open **Discover → Story Community → COS / OSS**, enter the endpoint, and use `index.json` as the index path. You can also enter the complete index URL.
-
-For a private bucket, use signed URLs for `index.json` and story files. Never put SecretId, SecretKey, or AccessKey values in the repository or app configuration.
-
-#### Aliyun OSS
-
-1. Create a bucket with **public read** ACL.
-2. Upload the same `index.json` and `assets/` layout.
-3. Use an endpoint such as:
-
-```text
-https://<bucket>.oss-cn-hangzhou.aliyuncs.com
-```
-
-4. Enter the public endpoint and `index.json`, or the complete index URL, in AiChat.
-
-For a prefix such as `/aichat`, store `aichat/index.json` and `aichat/assets/...`, then enter the prefix or the complete index URL.
-
-#### Verify the bucket
+2. Keep `storyId`, `version`, the directory name, and the filename consistent.
+3. Put images under `assets/img/` and reference them as `../img/...`.
+4. Add or update the catalog entry and verify that its `file` exists.
+5. Strictly parse every JSON file and check every catalog path.
+6. After upload, verify the objects:
 
 ```bash
-curl -i "https://your-domain/index.json"
-curl -I "https://your-domain/assets/<story-id>/<version>.json"
+curl -i "https://your-domain/stories/index.json"
+curl -i "https://your-domain/stories/assets/first-light-cafe/1.json"
+curl -I "https://your-domain/stories/assets/img/first-light-cafe-cover.png"
 ```
 
-Both requests should return `200`. Native app requests normally do not need CORS. Publish only shareable story content; never upload API keys, user data, or backups.
-
-
-Object storage layout / 对象存储目录：`stories/index.json` is the catalog; story details live under `stories/assets/<storyId>/<version>.json`; images use `stories/assets/img/` relative paths. Configure the App storage path as `stories`.
+All requests should succeed. Never commit user data, backups, or unrelated credentials to this repository.
