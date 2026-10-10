@@ -9,16 +9,16 @@ This repository is a static story source for the AiChat Story Community. It uses
 ```text
 index.json                              # Root catalog loaded by the feed
 assets/
-  firefly-memory-core/1.json               # Detail JSON; version is the filename
-  yae-sakura-fragments/1.json
-  black-swan-twin-star/1.json
-  raiden-eternal-return/1.json
-  kafka-emotional-thread/1.json
+  firefly-memory-core.json               # Detail JSON; one file per story
+  yae-sakura-fragments.json
+  black-swan-twin-star.json
+  raiden-eternal-return.json
+  kafka-emotional-thread.json
   img/                                  # Shared image directory
     <story-id>-cover.png
 ```
 
-Every catalog `file` is relative to `index.json`, for example `assets/firefly-memory-core/1.json`. Every detail `images` entry is relative to its detail JSON. Because details are stored under `assets/<story-id>/` and images under `assets/img/`, use `../img/<file>` in a detail file.
+Every catalog `file` is relative to `index.json`, for example `assets/firefly-memory-core.json`. Every detail `images` entry is relative to its detail JSON. Because details are stored under `assets/` and images under `assets/img/`, use `img/<file>` in a detail file.
 
 ## GitHub and Gitee deployment
 
@@ -39,11 +39,11 @@ bucket/
 └── stories/
     ├── index.json
     └── assets/
-        ├── firefly-memory-core/1.json
-        ├── yae-sakura-fragments/1.json
-        ├── black-swan-twin-star/1.json
-        ├── raiden-eternal-return/1.json
-        ├── kafka-emotional-thread/1.json
+        ├── firefly-memory-core.json
+        ├── yae-sakura-fragments.json
+        ├── black-swan-twin-star.json
+        ├── raiden-eternal-return.json
+        ├── kafka-emotional-thread.json
         └── img/<story-id>-cover.png
 ```
 
@@ -60,7 +60,7 @@ The source only needs reads for concrete objects; bucket listing permission is u
 
 ```text
 stories/index.json
-stories/assets/**/*.json
+stories/assets/*.json
 stories/assets/img/*
 ```
 
@@ -72,16 +72,14 @@ The catalog contains feed metadata only:
 
 ```json
 {
-  "schemaVersion": 2,
   "stories": [{
     "storyId": "firefly-memory-core",
-    "version": 1,
     "title": "Love Etched into the Core",
     "author": "AiChat Romance Group",
     "publishedAt": "2026-10-09T00:00:00Z",
     "summary": "Short summary",
     "tags": ["romance", "daily life"],
-    "file": "assets/firefly-memory-core/1.json"
+    "file": "assets/firefly-memory-core.json"
   }]
 }
 ```
@@ -97,22 +95,26 @@ A detail file requires `storyId`, `title`, and `introduction`. `memories` is a s
   "author": "AiChat Romance Group",
   "introduction": "The post body can contain multiple paragraphs.",
   "memories": ["A relationship setting", "A fact that should remain true"],
-  "images": ["../img/firefly-memory-core-cover.png"]
+  "images": ["img/firefly-memory-core-cover.png"]
 }
 ```
 
 ## Publishing and verification
 
-1. Add a version file under `assets/<story-id>/`, such as `2.json`.
-2. Keep `storyId`, `version`, the directory name, and the filename consistent.
-3. Put images under `assets/img/` and reference them as `../img/...`.
+The app's Story Source Settings → Quick Post Editor can also create and edit posts. The COS / OSS key needs read/write access to the index, detail JSON, and `assets/img/` objects; removing images additionally requires `DeleteObject`. Add Image uploads into `assets/img/`, inserts an `img/<generated filename>` relative path, and shows a preview. The X on a preview deletes the remote image and its path. For published posts, deletion immediately updates the detail JSON; newly added images and other edits are written when Publish / Save is pressed. Images uploaded for an unpublished draft already exist remotely; use X before returning to the list to remove unwanted uploads.
+
+Blank lines can separate memory paragraphs; each nonempty line becomes one memory and blank lines are ignored.
+
+1. Add `assets/<storyId>.json`; update that same file for subsequent edits instead of creating a directory per post.
+2. Match the filename to `storyId`. The index contains list metadata only and does not need `schemaVersion` or `version`; detail files may retain a version.
+3. Put images under `assets/img/` and reference them as `img/...`.
 4. Add or update the catalog entry and verify that its `file` exists.
 5. Strictly parse every JSON file and check every catalog path.
 6. After upload, verify the objects:
 
 ```bash
 curl -i "https://your-domain/stories/index.json"
-curl -i "https://your-domain/stories/assets/firefly-memory-core/1.json"
+curl -i "https://your-domain/stories/assets/firefly-memory-core.json"
 curl -I "https://your-domain/stories/assets/img/firefly-memory-core-cover.png"
 ```
 

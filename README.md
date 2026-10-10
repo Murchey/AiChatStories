@@ -9,21 +9,16 @@
 ```text
 index.json                              # 根索引，发现页首先读取
 assets/
-  firefly-memory-core/
-    1.json                              # 故事详情，版本号作为文件名
-  yae-sakura-fragments/
-    1.json
-  black-swan-twin-star/
-    1.json
-  raiden-eternal-return/
-    1.json
-  kafka-emotional-thread/
-    1.json
+  firefly-memory-core.json               # 每篇故事一个 JSON，编号作为文件名
+  yae-sakura-fragments.json
+  black-swan-twin-star.json
+  raiden-eternal-return.json
+  kafka-emotional-thread.json
   img/                                  # 公共图片目录
     <story-id>-cover.png
 ```
 
-`index.json` 中的 `file` 必须是相对于 `index.json` 的路径，例如 `assets/firefly-memory-core/1.json`。详情 JSON 中的 `images` 必须是相对于详情 JSON 的路径；详情文件位于 `assets/<story-id>/` 时，图片放在公共目录 `assets/img/`，应填写 `../img/xxx.png`。
+`index.json` 中的 `file` 必须是相对于 `index.json` 的路径，例如 `assets/firefly-memory-core.json`。详情 JSON 中的 `images` 必须是相对于详情 JSON 的路径；详情文件位于 `assets/` 时，图片放在公共目录 `assets/img/`，应填写 `img/xxx.png`。
 
 ## 部署到 GitHub / Gitee
 
@@ -44,11 +39,11 @@ bucket/
 └── stories/
     ├── index.json
     └── assets/
-        ├── firefly-memory-core/1.json
-        ├── yae-sakura-fragments/1.json
-        ├── black-swan-twin-star/1.json
-        ├── raiden-eternal-return/1.json
-        ├── kafka-emotional-thread/1.json
+        ├── firefly-memory-core.json
+        ├── yae-sakura-fragments.json
+        ├── black-swan-twin-star.json
+        ├── raiden-eternal-return.json
+        ├── kafka-emotional-thread.json
         └── img/
             └── <story-id>-cover.png
 ```
@@ -66,7 +61,7 @@ bucket/
 
 ```text
 stories/index.json
-stories/assets/**/*.json
+stories/assets/*.json
 stories/assets/img/*
 ```
 
@@ -78,16 +73,14 @@ stories/assets/img/*
 
 ```json
 {
-  "schemaVersion": 2,
   "stories": [{
     "storyId": "firefly-memory-core",
-    "version": 1,
     "title": "刻进核心的爱",
     "author": "AiChat 情感故事组",
     "publishedAt": "2026-10-09T00:00:00Z",
     "summary": "短摘要",
     "tags": ["恋爱", "日常"],
-    "file": "assets/firefly-memory-core/1.json"
+    "file": "assets/firefly-memory-core.json"
   }]
 }
 ```
@@ -103,22 +96,26 @@ stories/assets/img/*
   "author": "AiChat 情感故事组",
   "introduction": "帖子正文，可以包含多段文字。",
   "memories": ["角色关系设定", "需要持续遵守的事实"],
-  "images": ["../img/firefly-memory-core-cover.png"]
+  "images": ["img/firefly-memory-core-cover.png"]
 }
 ```
 
 ## 发布和自检流程
 
-1. 在 `assets/<story-id>/` 新增版本文件，例如 `2.json`。
-2. 保证详情中的 `storyId`、`version` 与目录和文件名一致。
-3. 将图片放入 `assets/img/`，在详情中使用 `../img/...` 引用。
+也可以在 App 的“故事线设置 → 帖子快捷编辑”中创建或编辑帖子。此功能需要当前 COS / OSS 密钥具备索引、详情 JSON 和 `assets/img/` 图片对象的读写权限；删除图片还需要 `DeleteObject` 权限。点击“添加图片”后，App 将图片上传到 `assets/img/`，自动填写 `img/<自动生成的文件名>` 并显示预览；预览右上角的 X 会删除远端图片和对应路径。编辑已发布帖子时，图片删除会立即同步到详情 JSON；新增图片和其他正文修改在点击“发布 / 保存”后写入。未发布的新帖图片上传后已存在于远端，可在返回列表前用 X 删除不需要的图片。
+
+记忆点输入支持用空行分隔段落；每个非空行作为一条记忆点，空行不会导入。
+
+1. 在 `assets/` 新增 `<storyId>.json`；同一篇帖子更新时修改原文件，不建立单独子目录。
+2. 保证文件名与 `storyId` 一致，索引只保存列表元数据，不需要 `schemaVersion` 或 `version`；详情可保留自己的版本号。
+3. 将图片放入 `assets/img/`，在详情中使用 `img/...` 引用。
 4. 在 `index.json` 增加或更新对应条目，确认 `file` 路径真实存在。
 5. 严格解析全部 JSON，并检查索引中的每个 `file` 都能找到文件。
 6. 上传后检查：
 
 ```bash
 curl -i "https://你的域名/stories/index.json"
-curl -i "https://你的域名/stories/assets/firefly-memory-core/1.json"
+curl -i "https://你的域名/stories/assets/firefly-memory-core.json"
 curl -I "https://你的域名/stories/assets/img/firefly-memory-core-cover.png"
 ```
 

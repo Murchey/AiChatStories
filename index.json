@@ -1,9 +1,7 @@
 {
-  "schemaVersion": 2,
   "stories": [
     {
       "storyId": "firefly-memory-core",
-      "version": 1,
       "title": "刻进核心的爱",
       "author": "AiChat 情感故事组",
       "publishedAt": "2026-10-10T00:00:00Z",
@@ -15,11 +13,10 @@
         "牺牲",
         "重新相爱"
       ],
-      "file": "assets/firefly-memory-core/1.json"
+      "file": "assets/firefly-memory-core.json"
     },
     {
       "storyId": "yae-sakura-fragments",
-      "version": 1,
       "title": "神樱下的契约",
       "author": "AiChat 情感故事组",
       "publishedAt": "2026-10-10T00:00:00Z",
@@ -31,11 +28,10 @@
         "守候",
         "双向牺牲"
       ],
-      "file": "assets/yae-sakura-fragments/1.json"
+      "file": "assets/yae-sakura-fragments.json"
     },
     {
       "storyId": "black-swan-twin-star",
-      "version": 1,
       "title": "双生记忆星",
       "author": "AiChat 情感故事组",
       "publishedAt": "2026-10-10T00:00:00Z",
@@ -47,11 +43,10 @@
         "灵魂",
         "双向救赎"
       ],
-      "file": "assets/black-swan-twin-star/1.json"
+      "file": "assets/black-swan-twin-star.json"
     },
     {
       "storyId": "raiden-eternal-return",
-      "version": 1,
       "title": "等你想起的雨",
       "author": "AiChat 情感故事组",
       "publishedAt": "2026-10-10T00:00:00Z",
@@ -63,11 +58,10 @@
         "守护",
         "重逢"
       ],
-      "file": "assets/raiden-eternal-return/1.json"
+      "file": "assets/raiden-eternal-return.json"
     },
     {
       "storyId": "kafka-emotional-thread",
-      "version": 1,
       "title": "我们还会继续爱",
       "author": "AiChat 情感故事组",
       "publishedAt": "2026-10-10T00:00:00Z",
@@ -79,7 +73,7 @@
         "时间线",
         "失而复得"
       ],
-      "file": "assets/kafka-emotional-thread/1.json"
+      "file": "assets/kafka-emotional-thread.json"
     }
   ]
 }
