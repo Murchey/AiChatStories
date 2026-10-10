@@ -2,78 +2,84 @@
   "schemaVersion": 2,
   "stories": [
     {
-      "storyId": "first-light-cafe",
+      "storyId": "firefly-memory-core",
       "version": 1,
-      "title": "晨光咖啡馆",
+      "title": "刻进核心的爱",
       "author": "AiChat 情感故事组",
-      "publishedAt": "2026-10-09T00:00:00Z",
-      "summary": "关于慢热相遇与日常陪伴的温柔恋爱故事。两个人从一杯总是加错糖的咖啡开始，学会把喜欢说出口。",
+      "publishedAt": "2026-10-10T00:00:00Z",
+      "summary": "为了保住恋人的情感记忆，她将两人的回忆刻入机械核心，却忘记了自己的爱。",
       "tags": [
         "恋爱",
-        "日常",
-        "慢热",
-        "陪伴"
+        "架空",
+        "记忆",
+        "牺牲",
+        "重新相爱"
       ],
-      "file": "assets/first-light-cafe/1.json"
+      "file": "assets/firefly-memory-core/1.json"
     },
     {
-      "storyId": "after-the-rain",
+      "storyId": "yae-sakura-fragments",
       "version": 1,
-      "title": "雨停以前再见",
+      "title": "神樱下的契约",
       "author": "AiChat 情感故事组",
-      "publishedAt": "2026-10-09T00:00:00Z",
-      "summary": "一段错过多年后重新开始的恋爱。旧车站、未寄出的信，以及两个愿意重新了解彼此的人。",
+      "publishedAt": "2026-10-10T00:00:00Z",
+      "summary": "五百年的记忆换来灾厄封印，契约者以自己的记忆为代价，守候爱人的归来。",
       "tags": [
-        "重逢",
-        "遗憾",
-        "治愈"
+        "恋爱",
+        "架空",
+        "记忆",
+        "守候",
+        "双向牺牲"
       ],
-      "file": "assets/after-the-rain/1.json"
+      "file": "assets/yae-sakura-fragments/1.json"
     },
     {
-      "storyId": "moonlit-distance",
+      "storyId": "black-swan-twin-star",
       "version": 1,
-      "title": "月光两端",
+      "title": "双生记忆星",
       "author": "AiChat 情感故事组",
-      "publishedAt": "2026-10-09T00:00:00Z",
-      "summary": "异地恋的陪伴与等待。两座城市隔着夜色，但每一次通话都让距离变得具体而温柔。",
+      "publishedAt": "2026-10-10T00:00:00Z",
+      "summary": "记忆收藏家与记忆伴侣互相修补破碎的灵魂，将彼此编织成一颗双生记忆星。",
       "tags": [
-        "异地恋",
-        "思念",
-        "陪伴",
-        "治愈"
+        "恋爱",
+        "架空",
+        "记忆",
+        "灵魂",
+        "双向救赎"
       ],
-      "file": "assets/moonlit-distance/1.json"
+      "file": "assets/black-swan-twin-star/1.json"
     },
     {
-      "storyId": "unspoken-summer",
+      "storyId": "raiden-eternal-return",
       "version": 1,
-      "title": "夏日未寄信",
+      "title": "等你想起的雨",
       "author": "AiChat 情感故事组",
-      "publishedAt": "2026-10-09T00:00:00Z",
-      "summary": "关于暗恋、勇气和自我成长的青春恋爱故事。喜欢一个人，也学着先成为完整的自己。",
+      "publishedAt": "2026-10-10T00:00:00Z",
+      "summary": "影武者独自承受深渊侵蚀，失去记忆的永恒守护者循着身体记得的爱，在雨中找回恋人。",
       "tags": [
-        "暗恋",
-        "青春",
-        "成长",
-        "校园"
+        "恋爱",
+        "架空",
+        "记忆",
+        "守护",
+        "重逢"
       ],
-      "file": "assets/unspoken-summer/1.json"
+      "file": "assets/raiden-eternal-return/1.json"
     },
     {
-      "storyId": "quiet-harbor",
+      "storyId": "kafka-emotional-thread",
       "version": 1,
-      "title": "安静港湾",
+      "title": "我们还会继续爱",
       "author": "AiChat 情感故事组",
-      "publishedAt": "2026-10-09T00:00:00Z",
-      "summary": "两位经历过疲惫关系的人，在彼此身边慢慢找回安全感的成熟恋爱。",
+      "publishedAt": "2026-10-10T00:00:00Z",
+      "summary": "被时间线撕裂的情感纽带，让恋人退回普通搭档；当爱即将消失，言灵终于唤回真相。",
       "tags": [
-        "成熟恋爱",
-        "安全感",
-        "疗愈",
-        "生活"
+        "恋爱",
+        "架空",
+        "情感",
+        "时间线",
+        "失而复得"
       ],
-      "file": "assets/quiet-harbor/1.json"
+      "file": "assets/kafka-emotional-thread/1.json"
     }
   ]
 }

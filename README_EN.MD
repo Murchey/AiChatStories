@@ -2,23 +2,23 @@
 
 ## Purpose
 
-This repository is a static story source for the AiChat Story Community. It uses a lightweight catalog plus on-demand details: the app loads the root `index.json` for the feed and downloads a detail JSON only after a user opens a post. The sample catalog covers five romantic themes: slow-burn daily life, reunion and healing, long-distance love, youthful unrequited love, and a mature relationship.
+This repository is a static story source for the AiChat Story Community. It uses a lightweight catalog plus on-demand details: the app loads the root `index.json` for the feed and downloads a detail JSON only after a user opens a post. The first batch contains five alternate-universe game-character romance stories about love, sacrifice, memories, and emotions. Each post labels its suggested character with “（建议角色：xxx）”; this is optional and can be adapted to another local character. The body includes character background, user setup, and plot. Memories are initial imported context only, with no requirement for the character to record new memories.
 
 ## Repository layout
 
 ```text
 index.json                              # Root catalog loaded by the feed
 assets/
-  first-light-cafe/1.json               # Detail JSON; version is the filename
-  after-the-rain/1.json
-  moonlit-distance/1.json
-  unspoken-summer/1.json
-  quiet-harbor/1.json
+  firefly-memory-core/1.json               # Detail JSON; version is the filename
+  yae-sakura-fragments/1.json
+  black-swan-twin-star/1.json
+  raiden-eternal-return/1.json
+  kafka-emotional-thread/1.json
   img/                                  # Shared image directory
     <story-id>-cover.png
 ```
 
-Every catalog `file` is relative to `index.json`, for example `assets/first-light-cafe/1.json`. Every detail `images` entry is relative to its detail JSON. Because details are stored under `assets/<story-id>/` and images under `assets/img/`, use `../img/<file>` in a detail file.
+Every catalog `file` is relative to `index.json`, for example `assets/firefly-memory-core/1.json`. Every detail `images` entry is relative to its detail JSON. Because details are stored under `assets/<story-id>/` and images under `assets/img/`, use `../img/<file>` in a detail file.
 
 ## GitHub and Gitee deployment
 
@@ -39,11 +39,11 @@ bucket/
 └── stories/
     ├── index.json
     └── assets/
-        ├── first-light-cafe/1.json
-        ├── after-the-rain/1.json
-        ├── moonlit-distance/1.json
-        ├── unspoken-summer/1.json
-        ├── quiet-harbor/1.json
+        ├── firefly-memory-core/1.json
+        ├── yae-sakura-fragments/1.json
+        ├── black-swan-twin-star/1.json
+        ├── raiden-eternal-return/1.json
+        ├── kafka-emotional-thread/1.json
         └── img/<story-id>-cover.png
 ```
 
@@ -74,14 +74,14 @@ The catalog contains feed metadata only:
 {
   "schemaVersion": 2,
   "stories": [{
-    "storyId": "first-light-cafe",
+    "storyId": "firefly-memory-core",
     "version": 1,
-    "title": "First Light Cafe",
+    "title": "Love Etched into the Core",
     "author": "AiChat Romance Group",
     "publishedAt": "2026-10-09T00:00:00Z",
     "summary": "Short summary",
     "tags": ["romance", "daily life"],
-    "file": "assets/first-light-cafe/1.json"
+    "file": "assets/firefly-memory-core/1.json"
   }]
 }
 ```
@@ -91,13 +91,13 @@ A detail file requires `storyId`, `title`, and `introduction`. `memories` is a s
 ```json
 {
   "schemaVersion": 2,
-  "storyId": "first-light-cafe",
+  "storyId": "firefly-memory-core",
   "version": 1,
-  "title": "First Light Cafe",
+  "title": "Love Etched into the Core",
   "author": "AiChat Romance Group",
   "introduction": "The post body can contain multiple paragraphs.",
   "memories": ["A relationship setting", "A fact that should remain true"],
-  "images": ["../img/first-light-cafe-cover.png"]
+  "images": ["../img/firefly-memory-core-cover.png"]
 }
 ```
 
@@ -112,8 +112,8 @@ A detail file requires `storyId`, `title`, and `introduction`. `memories` is a s
 
 ```bash
 curl -i "https://your-domain/stories/index.json"
-curl -i "https://your-domain/stories/assets/first-light-cafe/1.json"
-curl -I "https://your-domain/stories/assets/img/first-light-cafe-cover.png"
+curl -i "https://your-domain/stories/assets/firefly-memory-core/1.json"
+curl -I "https://your-domain/stories/assets/img/firefly-memory-core-cover.png"
 ```
 
 All requests should succeed. Never commit user data, backups, or unrelated credentials to this repository.

@@ -2,28 +2,28 @@
 
 ## 仓库用途
 
-这是 AiChat 故事线社区的静态故事仓库示例。仓库采用“轻量索引 + 按需详情”设计：发现页只读取根目录 `index.json`，用户打开帖子后才读取对应的故事详情 JSON。当前示例包含五种恋爱情感方向：慢热日常、重逢治愈、异地思念、青春暗恋和成熟关系。
+这是 AiChat 故事线社区的静态故事仓库示例。仓库采用“轻量索引 + 按需详情”设计：发现页只读取根目录 `index.json`，用户打开帖子后才读取对应的故事详情 JSON。当前首批内容为五则二游架空爱情故事，围绕爱情、牺牲、记忆与情感展开。每篇以“（建议角色：xxx）”标注参考角色，可替换为其他本地角色，不要求绑定指定角色。正文保留角色背景、用户设定和具体剧情，记忆点仅用于首次导入，不要求角色主动记录新的记忆点。
 
 ## 仓库内文件结构
 
 ```text
 index.json                              # 根索引，发现页首先读取
 assets/
-  first-light-cafe/
+  firefly-memory-core/
     1.json                              # 故事详情，版本号作为文件名
-  after-the-rain/
+  yae-sakura-fragments/
     1.json
-  moonlit-distance/
+  black-swan-twin-star/
     1.json
-  unspoken-summer/
+  raiden-eternal-return/
     1.json
-  quiet-harbor/
+  kafka-emotional-thread/
     1.json
   img/                                  # 公共图片目录
     <story-id>-cover.png
 ```
 
-`index.json` 中的 `file` 必须是相对于 `index.json` 的路径，例如 `assets/first-light-cafe/1.json`。详情 JSON 中的 `images` 必须是相对于详情 JSON 的路径；详情文件位于 `assets/<story-id>/` 时，图片放在公共目录 `assets/img/`，应填写 `../img/xxx.png`。
+`index.json` 中的 `file` 必须是相对于 `index.json` 的路径，例如 `assets/firefly-memory-core/1.json`。详情 JSON 中的 `images` 必须是相对于详情 JSON 的路径；详情文件位于 `assets/<story-id>/` 时，图片放在公共目录 `assets/img/`，应填写 `../img/xxx.png`。
 
 ## 部署到 GitHub / Gitee
 
@@ -44,11 +44,11 @@ bucket/
 └── stories/
     ├── index.json
     └── assets/
-        ├── first-light-cafe/1.json
-        ├── after-the-rain/1.json
-        ├── moonlit-distance/1.json
-        ├── unspoken-summer/1.json
-        ├── quiet-harbor/1.json
+        ├── firefly-memory-core/1.json
+        ├── yae-sakura-fragments/1.json
+        ├── black-swan-twin-star/1.json
+        ├── raiden-eternal-return/1.json
+        ├── kafka-emotional-thread/1.json
         └── img/
             └── <story-id>-cover.png
 ```
@@ -80,14 +80,14 @@ stories/assets/img/*
 {
   "schemaVersion": 2,
   "stories": [{
-    "storyId": "first-light-cafe",
+    "storyId": "firefly-memory-core",
     "version": 1,
-    "title": "晨光咖啡馆",
+    "title": "刻进核心的爱",
     "author": "AiChat 情感故事组",
     "publishedAt": "2026-10-09T00:00:00Z",
     "summary": "短摘要",
     "tags": ["恋爱", "日常"],
-    "file": "assets/first-light-cafe/1.json"
+    "file": "assets/firefly-memory-core/1.json"
   }]
 }
 ```
@@ -97,13 +97,13 @@ stories/assets/img/*
 ```json
 {
   "schemaVersion": 2,
-  "storyId": "first-light-cafe",
+  "storyId": "firefly-memory-core",
   "version": 1,
-  "title": "晨光咖啡馆",
+  "title": "刻进核心的爱",
   "author": "AiChat 情感故事组",
   "introduction": "帖子正文，可以包含多段文字。",
   "memories": ["角色关系设定", "需要持续遵守的事实"],
-  "images": ["../img/first-light-cafe-cover.png"]
+  "images": ["../img/firefly-memory-core-cover.png"]
 }
 ```
 
@@ -118,8 +118,8 @@ stories/assets/img/*
 
 ```bash
 curl -i "https://你的域名/stories/index.json"
-curl -i "https://你的域名/stories/assets/first-light-cafe/1.json"
-curl -I "https://你的域名/stories/assets/img/first-light-cafe-cover.png"
+curl -i "https://你的域名/stories/assets/firefly-memory-core/1.json"
+curl -I "https://你的域名/stories/assets/img/firefly-memory-core-cover.png"
 ```
 
 三个请求应返回成功状态。不要把用户数据、备份文件或无关密钥提交到故事仓库。
