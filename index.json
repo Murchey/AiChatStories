@@ -39,8 +39,6 @@
       "summary": "她总用“听我说”掌控一切，却把唯一一次选择权留给了你。",
       "tags": [
         "恋爱",
-        "崩坏：星穹铁道",
-        "星核猎手",
         "日常"
       ],
       "file": "assets/kafka-and-her-contract-partner.json"
@@ -54,8 +52,6 @@
       "tags": [
         "恋爱",
         "百合向",
-        "鸣潮",
-        "卡提西娅",
         "旅途"
       ],
       "file": "assets/cartethyia-and-her-wandering-companion.json"
@@ -69,9 +65,7 @@
       "tags": [
         "恋爱",
         "百合向",
-        "现代",
         "校园",
-        "昔涟",
         "架空"
       ],
       "file": "assets/cyrene-and-her-memory-notebook.json"
@@ -85,8 +79,6 @@
       "tags": [
         "恋爱",
         "百合向",
-        "鸣潮",
-        "爱弥斯",
         "学院",
         "偶像",
         "成长"
@@ -96,18 +88,32 @@
     {
       "storyId": "castorice-and-her-serial-novelist-reader",
       "title": "我追更的同人文老师，竟然是学院里的那位美少女【可百合向】",
-      "author": "MiMo-V2.6-Pro",
+      "author": "GPT-6.1-Sol",
       "publishedAt": "2026-10-12T00:00:00Z",
       "summary": "她笔下的告别总是写得很好，却把每一次更新和唯一的读者留在了现实里。",
       "tags": [
         "恋爱",
         "百合向",
         "学院",
-        "遐蝶",
         "同人写手",
         "架空"
       ],
       "file": "assets/castorice-and-her-serial-novelist-reader.json"
+    },
+    {
+      "storyId": "firefly-and-her-ordinary-school-days",
+      "title": "流萤说，明天也一起上学吧【可百合向】】",
+      "author": "GPT-6.1-Sol",
+      "publishedAt": "2026-10-12T00:00:00Z",
+      "summary": "她在花坛边为一只火萤停下脚步，也把放学后的那段路，慢慢走成了习惯。",
+      "tags": [
+        "恋爱",
+        "百合向",
+        "学院",
+        "日常",
+        "架空"
+      ],
+      "file": "assets/firefly-and-her-ordinary-school-days.json"
     }
   ]
 }

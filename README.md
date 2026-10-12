@@ -37,7 +37,7 @@ App 会先访问 Raw 地址；Raw 不可用时会尝试网页 Raw 和 Contents A
 使用AI创作故事线的时候，你可以使用下面的提示词：
 
 ```
-创作{角色名}故事线设定，可参考资料（"AiChatStories\DevelopDocs\写作要求V2.md"，{角色wiki网址（可选）/角色包本地地址（可选、建议填写）}），关于该故事线设定我的想法是：{填写你的初步想法（建议）}，完成之后同步更新index.json索引
+创作{角色名}故事线设定，可参考资料（"AiChatStories\DevelopDocs\写作要求V2.md"，{角色wiki网址（可选）/角色包本地地址（可选、建议填写）}，"D:\Projects\vibecoding\AiChatStories\README.md"），关于该故事线设定我的想法是：{填写你的初步想法（建议）}，完成之后同步更新index.json索引
 ```
 
 当前公开故事索引地址：[index.json](https://raw.githubusercontent.com/Murchey/AiChatStories/main/index.json)

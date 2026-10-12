@@ -39,7 +39,7 @@ Current public story catalog URL: [index.json](https://raw.githubusercontent.com
 When using AI to create a storyline profile, you can use the following prompt:
 
 ``text
-Create a storyline profile for {character name}. You may refer to "AiChatStories\DevelopDocs\Writing Requirements V2.md" and {optional character wiki URL / optional local character-package path (recommended)}. My initial idea for this storyline is: {enter your initial idea (recommended)}. After completion, update the index.json catalog as well.
+Create a storyline profile for {character name}. You may refer to "AiChatStories\DevelopDocs\Writing Requirements V2.md" and {optional character wiki URL / optional local character-package path (recommended)，"D:\Projects\vibecoding\AiChatStories\README.md"}. My initial idea for this storyline is: {enter your initial idea (recommended)}. After completion, update the index.json catalog as well.
 ``
 ## COS / OSS deployment
 
