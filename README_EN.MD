@@ -1,5 +1,7 @@
 # AiChat Stories
 
+*Chinese version README: [README.md](https://github.com/Murchey/AiChatStories/blob/main/README.md)*
+
 ## Purpose
 
 This repository is a static story source for the AiChat Story Community. It uses a lightweight catalog plus on-demand details: the app loads the root `index.json` for the feed and downloads a detail JSON only after a user opens a post. The first batch contains five alternate-universe game-character romance stories about love, sacrifice, memories, and emotions. Each post labels its suggested character with “（建议角色：xxx）”; this is optional and can be adapted to another local character. The body includes character background, user setup, and plot. Memories are initial imported context only, with no requirement for the character to record new memories.
@@ -30,6 +32,15 @@ Every catalog `file` is relative to `index.json`, for example `assets/firefly-me
 
 The app tries Raw URLs first and falls back to web Raw and the Contents API. GitHub and Gitee do not use Secret ID or Secret Key. The repository and branch must allow the app to read `index.json` and the referenced `assets/` files.
 
+Current public story catalog URL: [index.json](https://raw.githubusercontent.com/Murchey/AiChatStories/main/index.json)
+
+## Recommended AI-assisted writing prompt
+
+When using AI to create a storyline profile, you can use the following prompt:
+
+``text
+Create a storyline profile for {character name}. You may refer to "AiChatStories\DevelopDocs\Writing Requirements V2.md" and {optional character wiki URL / optional local character-package path (recommended)}. My initial idea for this storyline is: {enter your initial idea (recommended)}. After completion, update the index.json catalog as well.
+``
 ## COS / OSS deployment
 
 Use a dedicated object prefix such as `stories/`. The object keys should be:
@@ -119,3 +130,5 @@ curl -I "https://your-domain/stories/assets/img/firefly-memory-core-cover.png"
 ```
 
 All requests should succeed. Never commit user data, backups, or unrelated credentials to this repository.
+
+

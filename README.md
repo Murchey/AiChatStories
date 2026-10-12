@@ -1,5 +1,7 @@
 # AiChat Stories
 
+*English version README: [README_EN.MD](https://github.com/Murchey/AiChatStories/blob/main/README_EN.MD)*
+
 ## 仓库用途
 
 这是 AiChat 故事线社区的静态故事仓库示例。仓库采用“轻量索引 + 按需详情”设计：发现页只读取根目录 `index.json`，用户打开帖子后才读取对应的故事详情 JSON。当前首批内容为五则二游架空爱情故事，围绕爱情、牺牲、记忆与情感展开。每篇以“（建议角色：xxx）”标注参考角色，可替换为其他本地角色，不要求绑定指定角色。正文保留角色背景、用户设定和具体剧情，记忆点仅用于首次导入，不要求角色主动记录新的记忆点。
@@ -29,6 +31,16 @@ assets/
 5. 保存并测试来源。
 
 App 会先访问 Raw 地址；Raw 不可用时会尝试网页 Raw 和 Contents API。GitHub/Gitee 不需要填写 Secret ID 或 Secret Key。仓库公开性和分支权限必须允许读取 `index.json` 与 `assets/` 下的文件。
+
+## AI辅助创作提示词建议
+
+使用AI创作故事线的时候，你可以使用下面的提示词：
+
+```
+创作{角色名}故事线设定，可参考资料（"AiChatStories\DevelopDocs\写作要求V2.md"，{角色wiki网址（可选）/角色包本地地址（可选、建议填写）}），关于该故事线设定我的想法是：{填写你的初步想法（建议）}，完成之后同步更新index.json索引
+```
+
+当前公开故事索引地址：[index.json](https://raw.githubusercontent.com/Murchey/AiChatStories/main/index.json)
 
 ## 部署到 COS / OSS
 
@@ -120,3 +132,5 @@ curl -I "https://你的域名/stories/assets/img/firefly-memory-core-cover.png"
 ```
 
 三个请求应返回成功状态。不要把用户数据、备份文件或无关密钥提交到故事仓库。
+
+
