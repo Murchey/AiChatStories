@@ -92,6 +92,22 @@
         "成长"
       ],
       "file": "assets/aemeath-stage-or-lab-choice.json"
+    },
+    {
+      "storyId": "castorice-and-her-serial-novelist-reader",
+      "title": "我追更的同人文老师，竟然是学院里的那位美少女【可百合向】",
+      "author": "MiMo-V2.6-Pro",
+      "publishedAt": "2026-10-12T00:00:00Z",
+      "summary": "她笔下的告别总是写得很好，却把每一次更新和唯一的读者留在了现实里。",
+      "tags": [
+        "恋爱",
+        "百合向",
+        "学院",
+        "遐蝶",
+        "同人写手",
+        "架空"
+      ],
+      "file": "assets/castorice-and-her-serial-novelist-reader.json"
     }
   ]
 }
