@@ -53,6 +53,22 @@
         "旅途"
       ],
       "file": "assets/cartethyia-and-her-wandering-companion.json"
+    },
+    {
+      "storyId": "cyrene-and-her-memory-notebook",
+      "title": "把今天夹进你的书页【可百合向】",
+      "author": "AiChat 创作组",
+      "publishedAt": "2026-10-12T00:00:00Z",
+      "summary": "她替所有人收藏青春，却把最舍不得的空白页留给了你。",
+      "tags": [
+        "恋爱",
+        "百合向",
+        "现代",
+        "校园",
+        "昔涟",
+        "架空"
+      ],
+      "file": "assets/cyrene-and-her-memory-notebook.json"
     }
   ]
 }
