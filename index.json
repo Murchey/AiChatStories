@@ -1,4 +1,10 @@
 {
+  "indexes": [
+    {
+      "file": "index.json",
+      "title": "最新故事"
+    }
+  ],
   "stories": [
     {
       "storyId": "Aemeath-and-her-Manager",

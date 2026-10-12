@@ -4,7 +4,7 @@
 
 ## Purpose
 
-This repository is a static story source for the AiChat Story Community. It uses a lightweight catalog plus on-demand details: the app loads the root `index.json` for the feed and downloads a detail JSON only after a user opens a post. The first batch contains five alternate-universe game-character romance stories about love, sacrifice, memories, and emotions. Each post labels its suggested character with “（建议角色：xxx）”; this is optional and can be adapted to another local character. The body includes character background, user setup, and plot. Memories are initial imported context only, with no requirement for the character to record new memories.
+This repository is a static story source for the AiChat Story Community. It uses a lightweight catalog plus on-demand details: the app loads the root `index.json` for the feed and downloads a detail JSON only after a user opens a post. The published content features game-character and alternate-universe romance stories. Each post labels its suggested character with “（建议角色：xxx）”; this is optional and can be adapted to another local character. The body includes character background, user setup, and plot. Memories are initial imported context only, with no requirement for the character to record new memories.
 
 ## Repository layout
 
@@ -132,3 +132,36 @@ curl -I "https://your-domain/stories/assets/img/firefly-memory-core-cover.png"
 All requests should succeed. Never commit user data, backups, or unrelated credentials to this repository.
 
 
+
+
+## Multi-index format (up to 100 stories per page)
+
+COS/OSS, GitHub and Gitee share the same format. The root contains both the first page and a lightweight directory. Opening the community fetches only the root, not every page. With fewer than 100 stories, list only the root and do not create empty pages.
+
+```json
+{
+  "indexes": [
+    {"file": "index.json", "title": "Latest stories"},
+    {"file": "index-2.json", "title": "Page 2"}
+  ],
+  "stories": [
+    {"storyId": "example", "title": "Example", "summary": "Preview", "tags": ["Romance"], "file": "assets/example.json"}
+  ]
+}
+```
+
+Other pages contain only `{"stories": [...]}`. All index files are siblings of the root. The first directory entry must name the actual root; names must be unique JSON filenames using letters, digits, underscores, hyphens and dots, without paths, URLs or queries. Optional `title` defaults to the filename. Directory order controls load-more order. Each new-format page holds at most 100 entries; story IDs are globally unique. Detail `file` paths always resolve against the root index, while image paths resolve against the detail JSON. Keep `assets/<storyId>.json` and `assets/img/` shared across all pages. No `schemaVersion` or `version` is required. Legacy indexes without `indexes` remain readable without truncation, even above 100 entries.
+
+### Browsing and caching
+
+The index menu replaces the feed with the selected page and clears search and tags. Search and tags filter only loaded pages without downloading other indexes. Load more fetches the next page, appends entries and applies the active filter; it remains available even if a page has no matches. Clearing search restores loaded content without network access. Tags come from the full loaded content. Cached pages are reused within five minutes; reopening after five minutes refreshes the root. Manual refresh updates the root directory and currently loaded pages. Index caches are limited to five sources and 5 MiB total, evicted by last use. Details remain on-demand.
+
+### Publishing and permissions
+
+Upload details and additional pages first, then publish the root directory last. Deploy all `index*.json` files and `assets/` to the same repository branch or storage prefix. Private COS/OSS credentials need GetObject for `stories/index*.json`. Editing also needs PutObject for indexes and details/images, and DeleteObject for cleanup and rollback; bucket listing is not required.
+
+Quick publishing inserts a new story at the front of the root. Overflow beyond 100 entries cascades into subsequent pages, creating `index-N.json` when necessary. Editing and deleting update the owning page without filling gaps. The editor offers page selection; publishing and ID changes read all indexes to check globally duplicate IDs, so administrative traffic is higher than browsing traffic.
+
+Static storage has no multi-object transactions: publish serially and avoid concurrent administrators. The App writes details and additional pages before the root, attempts index rollback on failure and keeps the draft. If rollback fails, inspect remote indexes before retrying. Unreferenced uploaded details/images may need manual cleanup. Deletion updates the index before removing the detail; failed detail cleanup does not put the story back into the feed.
+
+Validate every JSON, directory target, 100-entry limit, globally unique ID and detail path before publishing. Do not list missing, future or empty placeholder pages.
