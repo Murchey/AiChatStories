@@ -110,6 +110,20 @@ A detail file requires `storyId`, `title`, and `introduction`. `memories` is a s
 }
 ```
 
+## Tag policy
+
+Tags are feed filters, not character lore or full-text keywords. Across every `index*.json` and detail JSON, the repository must use no more than **30 unique tag values**. Use 3—5 tags per story, with a maximum of 6. When the repository reaches the limit, merge synonyms instead of adding near-duplicates.
+
+Order tags as relationship, source, then theme. Every story includes `恋爱`. Yuri stories also include `百合向`. Add the source name when it is known, followed by 1—3 themes that materially improve discovery. Do not use character names, author names, version labels, title fragments, one-off plot details, or synonyms such as mixing `校园`, `学院`, and `现代学院`; use `学院`.
+
+Current controlled vocabulary:
+
+- Relationship: `恋爱`, `百合向`
+- Source: `鸣潮`, `崩坏：星穹铁道`
+- Theme and setting: `学院`, `学术`, `偶像`, `同人创作`, `西幻`, `旅途`, `日常`, `成长`, `权力关系`
+
+Keep these exact Chinese values in JSON so filtering stays consistent across language documents. Before adding a tag, confirm that the repository-wide unique count is below 30 and reuse an existing category whenever possible. Before publishing, verify that detail and index tag arrays match exactly.
+
 ## Publishing and verification
 
 The app's Story Source Settings → Quick Post Editor can also create and edit posts. The COS / OSS key needs read/write access to the index, detail JSON, and `assets/img/` objects; removing images additionally requires `DeleteObject`. Add Image uploads into `assets/img/`, inserts an `img/<generated filename>` relative path, and shows a preview. The X on a preview deletes the remote image and its path. For published posts, deletion immediately updates the detail JSON; newly added images and other edits are written when Publish / Save is pressed. Images uploaded for an unpublished draft already exist remotely; use X before returning to the list to remove unwanted uploads.
@@ -165,3 +179,4 @@ Quick publishing inserts a new story at the front of the root. Overflow beyond 1
 Static storage has no multi-object transactions: publish serially and avoid concurrent administrators. The App writes details and additional pages before the root, attempts index rollback on failure and keeps the draft. If rollback fails, inspect remote indexes before retrying. Unreferenced uploaded details/images may need manual cleanup. Deletion updates the index before removing the detail; failed detail cleanup does not put the story back into the feed.
 
 Validate every JSON, directory target, 100-entry limit, globally unique ID and detail path before publishing. Do not list missing, future or empty placeholder pages.
+
