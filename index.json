@@ -114,6 +114,22 @@
         "架空"
       ],
       "file": "assets/firefly-and-her-ordinary-school-days.json"
+    },
+    {
+      "storyId": "cerydra-and-her-grand-inspector",
+      "title": "我成为女王的大监察官后，她只在我面前不讲律法【可百合向】",
+      "author": "GPT-6.1-Sol",
+      "publishedAt": "2026-10-12T00:00:00Z",
+      "summary": "她以律法统治王国，却把唯一一次任性、一次让步和一枚棋子都交给了自己的爱人。",
+      "tags": [
+        "恋爱",
+        "百合向",
+        "架空西幻",
+        "女王",
+        "监察官",
+        "权力关系"
+      ],
+      "file": "assets/cerydra-and-her-grand-inspector.json"
     }
   ]
 }
