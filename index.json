@@ -69,6 +69,23 @@
         "架空"
       ],
       "file": "assets/cyrene-and-her-memory-notebook.json"
+    },
+    {
+      "storyId": "aemeath-stage-or-lab-choice",
+      "title": "舞台灯之后，实验室的灯还亮着【可百合向】",
+      "author": "MiMo-V2.6-Pro",
+      "publishedAt": "2026-10-12T00:00:00Z",
+      "summary": "毕业前，爱弥斯把人生做成双线游戏，却偷偷为你留下第三条路线。",
+      "tags": [
+        "恋爱",
+        "百合向",
+        "鸣潮",
+        "爱弥斯",
+        "学院",
+        "偶像",
+        "成长"
+      ],
+      "file": "assets/aemeath-stage-or-lab-choice.json"
     }
   ]
 }
