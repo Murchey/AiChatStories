@@ -1,79 +1,58 @@
 {
   "stories": [
     {
-      "storyId": "firefly-memory-core",
-      "title": "刻进核心的爱",
-      "author": "AiChat 情感故事组",
+      "storyId": "Aemeath-and-her-Manager",
+      "title": "偶像小爱和陪伴型经纪人",
+      "author": "李默然",
       "publishedAt": "2026-10-10T00:00:00Z",
-      "summary": "为了保住恋人的情感记忆，她将两人的回忆刻入机械核心，却忘记了自己的爱。",
+      "summary": "偶像小爱也想偶尔撒个娇，“好不好嘛，宝宝~”",
       "tags": [
         "恋爱",
-        "架空",
-        "记忆",
-        "牺牲",
-        "重新相爱"
+        "剧情设定衍生"
       ],
-      "file": "assets/firefly-memory-core.json"
+      "file": "assets/Aemeath-and-her-Manager.json"
     },
     {
-      "storyId": "yae-sakura-fragments",
-      "title": "神樱下的契约",
-      "author": "AiChat 情感故事组",
+      "storyId": "The-Herta-And-Her-Assistant",
+      "title": "假如你是天才黑塔的助理",
+      "author": "蓝色大肥鱼（DeepSeek App）",
       "publishedAt": "2026-10-10T00:00:00Z",
-      "summary": "五百年的记忆换来灾厄封印，契约者以自己的记忆为代价，守候爱人的归来。",
+      "summary": "天才和你在学术上拌嘴，又不得不招呼你陪她吃饭喝茶",
       "tags": [
         "恋爱",
         "架空",
-        "记忆",
-        "守候",
-        "双向牺牲"
+        "学术"
       ],
-      "file": "assets/yae-sakura-fragments.json"
+      "file": "assets/The-Herta-And-Her-Assistant.json"
     },
     {
-      "storyId": "black-swan-twin-star",
-      "title": "双生记忆星",
-      "author": "AiChat 情感故事组",
-      "publishedAt": "2026-10-10T00:00:00Z",
-      "summary": "记忆收藏家与记忆伴侣互相修补破碎的灵魂，将彼此编织成一颗双生记忆星。",
+      "storyId": "kafka-and-her-contract-partner",
+      "title": "卡芙卡和她的合约搭档",
+      "author": "AiChat 创作组",
+      "publishedAt": "2026-10-12T00:00:00Z",
+      "summary": "她总用“听我说”掌控一切，却把唯一一次选择权留给了你。",
       "tags": [
         "恋爱",
-        "架空",
-        "记忆",
-        "灵魂",
-        "双向救赎"
+        "崩坏：星穹铁道",
+        "星核猎手",
+        "日常"
       ],
-      "file": "assets/black-swan-twin-star.json"
+      "file": "assets/kafka-and-her-contract-partner.json"
     },
     {
-      "storyId": "raiden-eternal-return",
-      "title": "等你想起的雨",
-      "author": "AiChat 情感故事组",
-      "publishedAt": "2026-10-10T00:00:00Z",
-      "summary": "影武者独自承受深渊侵蚀，失去记忆的永恒守护者循着身体记得的爱，在雨中找回恋人。",
+      "storyId": "cartethyia-and-her-wandering-companion",
+      "title": "风会替我们选下一站【可百合向】",
+      "author": "AiChat 创作组",
+      "publishedAt": "2026-10-12T00:00:00Z",
+      "summary": "她从不替你决定终点，只想确认下一段路，你仍愿意与她同行。",
       "tags": [
         "恋爱",
-        "架空",
-        "记忆",
-        "守护",
-        "重逢"
+        "百合向",
+        "鸣潮",
+        "卡提西娅",
+        "旅途"
       ],
-      "file": "assets/raiden-eternal-return.json"
-    },
-    {
-      "storyId": "kafka-emotional-thread",
-      "title": "我们还会继续爱",
-      "author": "AiChat 情感故事组",
-      "publishedAt": "2026-10-10T00:00:00Z",
-      "summary": "被时间线撕裂的情感纽带，让恋人退回普通搭档；当爱即将消失，言灵终于唤回真相。",
-      "tags": [
-        "恋爱",
-        "架空",
-        "情感",
-        "时间线",
-        "失而复得"
-      ],
-      "file": "assets/kafka-emotional-thread.json"
+      "file": "assets/cartethyia-and-her-wandering-companion.json"
     }
   ]
 }
