@@ -7,6 +7,166 @@
   ],
   "stories": [
     {
+      "storyId": "denia-and-her-half-lidded-secret",
+      "title": "总在打瞌睡的虚质学妹，只把真名交给我",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她把最真实的睡颜留给镜头，也把名字的含义只讲给你听。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "学院",
+        "日常"
+      ],
+      "file": "assets/denia-and-her-half-lidded-secret.json"
+    },
+    {
+      "storyId": "phoebe-and-her-half-shared-prayer",
+      "title": "隐海修会的教士，把祈祷分了一半给我",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她为所有人祈祷，却把雨夜里的伞和没说完的心事交给你。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "旅途",
+        "日常"
+      ],
+      "file": "assets/phoebe-and-her-half-shared-prayer.json"
+    },
+    {
+      "storyId": "phrolova-and-her-overdue-covenant",
+      "title": "残星会会监说，我们的旧约还没到期",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她等了数百年，只为确认这次重逢不是又一场失约。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "权力关系",
+        "日常"
+      ],
+      "file": "assets/phrolova-and-her-overdue-covenant.json"
+    },
+    {
+      "storyId": "jinhsi-and-her-wish-lantern",
+      "title": "今州令尹的许愿名单上，第一个是我",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她替一州人记愿望，自己的那盏龙灯写着你。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "权力关系",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/jinhsi-and-her-wish-lantern.json"
+    },
+    {
+      "storyId": "lynae-and-her-unmasked-days",
+      "title": "伪装成预科生的佣兵，只在你面前不演了",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她伪造身份混进学院，却在你面前露出最不设防的样子。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "学院",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/lynae-and-her-unmasked-days.json"
+    },
+    {
+      "storyId": "mornye-and-her-starlight-prototype",
+      "title": "二十年后，教授她还是叫我前辈",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她算得出群星轨迹，却算不出眼前人为什么还愿意等她。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "学院",
+        "学术",
+        "成长"
+      ],
+      "file": "assets/mornye-and-her-starlight-prototype.json"
+    },
+    {
+      "storyId": "chisa-and-her-unbroken-thread",
+      "title": "自称普通学生的她，把我的死局剪成了活路",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她把万物的弱点看得一清二楚，唯独对你，迟迟没有剪断。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "学院",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/chisa-and-her-unbroken-thread.json"
+    },
+    {
+      "storyId": "qingxiao-and-her-unsheathed-moon",
+      "title": "教我御剑的师尊，把百年旧事只讲给我听",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她的剑能斩开山海，却总在你落下时收得比谁都快。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "旅途",
+        "成长"
+      ],
+      "file": "assets/qingxiao-and-her-unsheathed-moon.json"
+    },
+    {
+      "storyId": "siglika-and-her-unspoken-diary",
+      "title": "总说“我可以”的罗伊少女，把日记藏进了我手里",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她把所有不安写进日记，却愿意让你读最软的那一页。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "学院",
+        "成长"
+      ],
+      "file": "assets/siglika-and-her-unspoken-diary.json"
+    },
+    {
+      "storyId": "yangyang-xuanling-and-her-windlit-road",
+      "title": "陪祀声之人走过夜路后，她把风的秘密告诉了我",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她替所有人听风辨路，却把最想走的那条路留给你一起选。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "旅途",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/yangyang-xuanling-and-her-windlit-road.json"
+    },
+    {
+      "storyId": "iuno-and-her-unforetold-future",
+      "title": "七丘谕女算不出的未来，她决定和我一起走",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她看见过无数结局，第一次决定不预演和你有关的这一段。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "旅途",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/iuno-and-her-unforetold-future.json"
+    },
+    {
       "storyId": "odette-and-her-sole-audience",
       "title": "奥黛塔和她的唯一观众",
       "author": "Mimo-V2.6-Pro",
