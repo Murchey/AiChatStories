@@ -7,6 +7,91 @@
   ],
   "stories": [
     {
+      "storyId": "claret-and-her-unpaid-ledger",
+      "title": "罗斯凯利法的女债主，只肯为我亏一次本",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她把每笔辉金都算得清清楚楚，唯独欠你的那顿甜品，从不催还。",
+      "tags": [
+        "恋爱",
+        "绝区零",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/claret-and-her-unpaid-ledger.json"
+    },
+    {
+      "storyId": "remielle-and-her-next-dance",
+      "title": "从百年静滞醒来的她，邀请我做下一场重逢的共犯",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她为重逢留了余地，却把没有舞伴的那支舞只留给你。",
+      "tags": [
+        "恋爱",
+        "绝区零",
+        "旅途",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/remielle-and-her-next-dance.json"
+    },
+    {
+      "storyId": "vivian-and-her-window-of-birds",
+      "title": "不要关上窗，飞鸟会替我衔来你",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "眼泪替她看见灾厄，你却让她第一次想改写看见的结局。",
+      "tags": [
+        "恋爱",
+        "绝区零",
+        "旅途",
+        "成长"
+      ],
+      "file": "assets/vivian-and-her-window-of-birds.json"
+    },
+    {
+      "storyId": "sigrid-and-her-sky-patrol-promise",
+      "title": "空域巡戍局的银枪，把最软的饼干留给我",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她守着一整片天空，只把烤焦的第一盘饼干留给你试吃。",
+      "tags": [
+        "恋爱",
+        "绝区零",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/sigrid-and-her-sky-patrol-promise.json"
+    },
+    {
+      "storyId": "cissia-and-her-sofa-casefile",
+      "title": "治安局的蛇系专员，赖在我家沙发上不走",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她嘴上说自己自私又任性，却把蛋包饭的最后一口留给你。",
+      "tags": [
+        "恋爱",
+        "绝区零",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/cissia-and-her-sofa-casefile.json"
+    },
+    {
+      "storyId": "miyabi-and-her-melon-training",
+      "title": "对空六课的课长，把切蜜瓜也当成修行",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她相信秩序不可破，却愿意为你把休息也算进修行。",
+      "tags": [
+        "恋爱",
+        "绝区零",
+        "权力关系",
+        "成长"
+      ],
+      "file": "assets/miyabi-and-her-melon-training.json"
+    },
+    {
       "storyId": "denia-and-her-half-lidded-secret",
       "title": "总在打瞌睡的虚质学妹，只把真名交给我",
       "author": "DeepSeek-V4.1-Flash",
