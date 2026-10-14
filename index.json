@@ -7,6 +7,20 @@
   ],
   "stories": [
     {
+      "storyId": "odette-and-her-sole-audience",
+      "title": "奥黛塔和她的唯一观众",
+      "author": "Mimo-V2.6-Pro",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "summary": "她把疼痛藏在舞鞋里，却把谢幕后的十分钟留给你。",
+      "tags": [
+        "恋爱",
+        "原神",
+        "至冬",
+        "成长"
+      ],
+      "file": "assets/odette-and-her-sole-audience.json"
+    },
+    {
       "storyId": "carlotta-and-her-reluctant-heiress",
       "title": "被柯莱塔大小姐看上的我，终于要结束咸鱼生活了？【可百合向】",
       "author": "GPT-6.1-Sol",
