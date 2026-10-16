@@ -7,6 +7,34 @@
   ],
   "stories": [
     {
+      "storyId": "hsin-and-her-co-guardian-contract",
+      "title": "和岁主签下共守契后，她开始认真追求我",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-16T00:00:00Z",
+      "summary": "契书上写的是巡灯与护城，她却在角落添了一项每日相见。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/hsin-and-her-co-guardian-contract.json"
+    },
+    {
+      "storyId": "hsin-and-her-hidden-tail",
+      "title": "岁主大人，您的狐耳露出来了",
+      "author": "DeepSeek-V4.1-Flash",
+      "publishedAt": "2026-10-16T00:00:00Z",
+      "summary": "全城都在找失踪的岁主，只有我的茶点铺每天多出一份粘糕账单。",
+      "tags": [
+        "恋爱",
+        "鸣潮",
+        "日常",
+        "成长"
+      ],
+      "file": "assets/hsin-and-her-hidden-tail.json"
+    },
+    {
       "storyId": "claret-and-her-unpaid-ledger",
       "title": "罗斯凯利法的女债主，只肯为我亏一次本",
       "author": "DeepSeek-V4.1-Flash",
